@@ -1,7 +1,40 @@
 ﻿@page "/items"
+@inject EntSelService SelectService
 
 <h3>Items</h3>
+@if (ents == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>ValStrs</th>
+                <th>Name</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <Virtualize Items="@ents" Context="ent">
+                <tr>
+                    <td>@ent.Id</td>
+                    <td>@ent.ValStrs</td>
+                    <td>@ent.Name</td>
+                    <td>@ent.Number</td>
+                </tr>
+            </Virtualize>
+        </tbody>
+    </table>
+}
 
 @code {
+    private List<EntSel> ents;
 
+    protected override async Task OnInitializedAsync()
+    {
+        ents = await SelectService.GetItmsAsync();
+    }
 }

@@ -18,14 +18,14 @@ else
             </tr>
         </thead>
         <tbody>
-        <Virtualize Items="@ents" Context="ent">
-            <tr>
-                <td>@ent.Id</td>
-                <td>@ent.ValStrs</td>
-                <td>@ent.Name</td>
-                <td>@ent.Number</td>
-            </tr>
-        </Virtualize>
+            <Virtualize Items="@ents" Context="ent">
+                <tr>
+                    <td>@ent.Id</td>
+                    <td>@ent.ValStrs</td>
+                    <td>@ent.Name</td>
+                    <td>@ent.Number</td>
+                </tr>
+            </Virtualize>
         </tbody>
     </table>
 }
@@ -35,6 +35,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        ents = await Task.Run(() => SelectService.GetEnts());
+        ents = await SelectService.GetEntsAsync();
     }
 }
