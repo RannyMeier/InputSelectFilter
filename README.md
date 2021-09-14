@@ -7,8 +7,9 @@ https://blazor.radzen.com/dropdown
 2) Like Radzen DropDown with integrated Search text box.
 3) public sealed class InputSelectFilter : InputBase
 4) Control also has a textbox for up to three search terms.
-5) Control has a listbox for filtered result.
-6) Binds to object list.
-7) Display Name.
-8) Filter on ValStrs property.
-9) Bind Id to property in form context.
+5) OnInput event filters list after input time delay about 1200ms.
+6) Control has a listbox for filtered result.
+7) Binds to object list.
+8) Display Name.
+9) Filter on ValStrs property.
+10) Bind Id to property in form context.
