@@ -15,7 +15,7 @@ https://github.com/radzenhq/radzen-blazor/blob/master/Radzen.Blazor/DropDownBase
 5) Control also has a textbox for up to three search terms.
 6) OnInput event filters list after input time delay about 1200ms.
 7) Control has a listbox for filtered result.
-8) Binds to object list.
-9) Display Name.
+8) Binds to integer in Orders list.
+9) Display Name in select list.
 10) Filter on ValStrs property.
-11) Bind Id to property in form context.
+11) Bind Id to property in form Orders context.
