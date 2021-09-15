@@ -22,20 +22,20 @@ else
         <tbody>
             @foreach (Order o in orders)
             {
-                <tr>
-                    <td>@o.Id</td>
-                    <td><InputText @bind-Value="o.DocNum" /></td>
-                    <td><InputDate @bind-Value="o.Date" @bind-Value:format="MM yyyy dd" /></td>
-                    <td>
-                        <InputSelectNumber @bind-Value="o.EntId">
-                            <Virtualize Items="@ents" Context="ent">
-                                <option>@ent.Name</option>
-                            </Virtualize>
-                        </InputSelectNumber>
-                    </td>
-                    <td>@o.ItmId</td>
-                    <td>@o.Amount</td>
-                </tr>
+            <tr>
+                <td>@o.Id</td>
+                <td><InputText @bind-Value="o.DocNum" /></td>
+                <td><InputDate @bind-Value="o.Date" @bind-Value:format="MM yyyy dd" /></td>
+                <td>
+                    <InputSelectNumber @bind-Value="o.EntId">
+                        <Virtualize Items="@ents" Context="ent">
+                            <option>@ent.Name</option>
+                        </Virtualize>
+                    </InputSelectNumber>
+                </td>
+                <td>@o.ItmId</td>
+                <td><InputNumber @bind-Value="o.Amount" @bind-Value:format="#,##0.00;(#,##0.00)" /></td>
+            </tr>
             }
         </tbody>
     </table>
