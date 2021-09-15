@@ -14,9 +14,19 @@ namespace InputSelectFilter.Data
         public string Number { get; set; }
     }
 
-    class EntList
+    public class EntList
     {
         [JsonPropertyName("entities")]
         public List<EntSel> Ents { get; set; }
+    }
+
+    public class Order
+    {
+        public int Id { get; set; }
+        public string DocNum { get; set; }
+        public DateTime Date { get; set; }
+        public int EntId { get; set; }
+        public int ItmId { get; set; }
+        public decimal Amount { get; set; }
     }
 }
