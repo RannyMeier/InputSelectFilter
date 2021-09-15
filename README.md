@@ -9,7 +9,7 @@ https://github.com/dotnet/aspnetcore/blob/afacc8740c40bf465da9b9a34914a2d88d243b
 https://github.com/radzenhq/radzen-blazor/blob/master/Radzen.Blazor/DropDownBase.cs
 
 1) Please fix Orders.razor tbody to use new InputSelectNumberFilter component for Entity and Item.
-2) Like Blazor InputSelect with added search and filter.
+2) Like Blazor InputSelect with added search, filter, and bind to integer.
 3) Like Radzen DropDown with integrated Search text box, delay, and filter.
 4) public sealed class InputSelectFilter : InputBase
 5) Control also has a textbox for up to three search terms.
