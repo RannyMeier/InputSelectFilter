@@ -24,16 +24,20 @@ else
             {
             <tr>
                 <td>@o.Id</td>
-                <td><InputText @bind-Value="o.DocNum" /></td>
+                <td><InputText style="width: 6em" @bind-Value="o.DocNum" /></td>
                 <td><InputDate @bind-Value="o.Date" @bind-Value:format="MM yyyy dd" /></td>
                 <td>
                     <RadzenDropDown TValue="Int32" AllowVirtualization="true" AllowFiltering="true" Data="@ents" @bind-Value="o.EntId"
                                     FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" FilterOperator="StringFilterOperator.Contains"
-                                    TextProperty="Name" ValueProperty="Id" 
-                                    Change=@(args => OnChange(o))/>
+                                    TextProperty="Name" ValueProperty="Id"
+                                    Change=@(args => OnChange(o)) />
                 </td>
-                <td>@o.ItmId</td>
-                <td><InputNumber @bind-Value="o.Amount" @bind-Value:format="#,##0.00;(#,##0.00)" /></td>
+                    <RadzenDropDown TValue="Int32" AllowVirtualization="true" AllowFiltering="true" Data="@itms" @bind-Value="o.ItmId"
+                                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" FilterOperator="StringFilterOperator.Contains"
+                                    TextProperty="Name" ValueProperty="Id"
+                                    Change=@(args => OnChange(o)) />
+
+                <td><InputNumber style="width: 5em" @bind-Value="o.Amount" @bind-Value:format="#,##0.00;(#,##0.00)" /></td>
             </tr>
             }
         </tbody>
@@ -57,6 +61,6 @@ else
 
     void OnChange(Order order)
     {
-        message = String.Format("Id {0}, DocNum {1}, EntId {2}", order.Id, order.DocNum, order.EntId);
+        message = String.Format("Id {0}, DocNum {1}, EntId {2}, ItmId {3}", order.Id, order.DocNum, order.EntId, order.ItmId);
     }
 }

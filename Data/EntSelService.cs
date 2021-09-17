@@ -47,11 +47,11 @@ namespace InputSelectFilter.Data
         public List<Order> GetOrders()
         {
             List<Order> ol = new List<Order>();
-            ol.Add(new Order() { Id = 1, DocNum = "N001", Date = new DateTime(2021, 2, 1), EntId = 3404, ItmId = 73858, Amount = 100M });
-            ol.Add(new Order() { Id = 2, DocNum = "N002", Date = new DateTime(2021, 3, 1), EntId = 6646, ItmId = 54151, Amount = 100M });
-            ol.Add(new Order() { Id = 3, DocNum = "N003", Date = new DateTime(2021, 4, 1), EntId = 10630, ItmId = 33396, Amount = 100M });
-            ol.Add(new Order() { Id = 4, DocNum = "N004", Date = new DateTime(2021, 5, 1), EntId = 16105, ItmId = 51478, Amount = 100M });
-            ol.Add(new Order() { Id = 5, DocNum = "N005", Date = new DateTime(2021, 6, 1), EntId = 20669, ItmId = 30520, Amount = 100M });
+            ol.Add(new Order() { Id = 1, DocNum = "N001", Date = new DateTime(2021, 2, 1), EntId = 3404, ItmId = 73858, Amount = 100.00M });
+            ol.Add(new Order() { Id = 2, DocNum = "N002", Date = new DateTime(2021, 3, 1), EntId = 6646, ItmId = 54151, Amount = 100.02M });
+            ol.Add(new Order() { Id = 3, DocNum = "N003", Date = new DateTime(2021, 4, 1), EntId = 10630, ItmId = 33396, Amount = 100.03M });
+            ol.Add(new Order() { Id = 4, DocNum = "N004", Date = new DateTime(2021, 5, 1), EntId = 16105, ItmId = 51478, Amount = 100.04M });
+            ol.Add(new Order() { Id = 5, DocNum = "N005", Date = new DateTime(2021, 6, 1), EntId = 20669, ItmId = 30520, Amount = 100.05M });
             return ol;
         }
     }
