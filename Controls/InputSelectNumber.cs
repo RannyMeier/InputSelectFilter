@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InputSelectFilter.Components
+namespace InputSelectFilter.Controls
 {
     public class InputSelectNumber<T> : InputSelect<T>
     {

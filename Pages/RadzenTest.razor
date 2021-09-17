@@ -1,0 +1,15 @@
+﻿@page "/radzentest"
+
+<h3>RadzenTest</h3>
+
+<p>@message</p>
+<RadzenButton class="btn btn-primary" Text="Radzen button" Click="ButtonClick">Click me</RadzenButton>
+
+@code {
+    private string message;
+
+    void ButtonClick()
+    {
+        message = "Hello";
+    }
+}

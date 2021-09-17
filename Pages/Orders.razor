@@ -27,11 +27,10 @@ else
                 <td><InputText @bind-Value="o.DocNum" /></td>
                 <td><InputDate @bind-Value="o.Date" @bind-Value:format="MM yyyy dd" /></td>
                 <td>
-                    <InputSelectNumber @bind-Value="o.EntId">
-                        <Virtualize Items="@ents" Context="ent">
-                            <option>@ent.Name</option>
-                        </Virtualize>
-                    </InputSelectNumber>
+                    <RadzenDropDown TValue="Int32" AllowVirtualization="true" AllowFiltering="true" Data="@ents" @bind-Value="o.EntId"
+                                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" FilterOperator="StringFilterOperator.Contains"
+                                    TextProperty="Name" ValueProperty="Id" 
+                                    Change=@(args => OnChange(o))/>
                 </td>
                 <td>@o.ItmId</td>
                 <td><InputNumber @bind-Value="o.Amount" @bind-Value:format="#,##0.00;(#,##0.00)" /></td>
@@ -39,17 +38,25 @@ else
             }
         </tbody>
     </table>
+    <p>@message</p>
 </EditForm>
 }
+
 
 @code {
     private List<EntSel> ents;
     private List<EntSel> itms;
     private List<Order> orders;
+    private string message;
     protected override async Task OnInitializedAsync()
     {
         ents = await SelectService.GetEntsAsync();
         itms = await SelectService.GetItmsAsync();
         orders = SelectService.GetOrders();
+    }
+
+    void OnChange(Order order)
+    {
+        message = String.Format("Id {0}, DocNum {1}, EntId {2}", order.Id, order.DocNum, order.EntId);
     }
 }
