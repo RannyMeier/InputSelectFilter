@@ -18,3 +18,4 @@ https://github.com/radzenhq/radzen-blazor/blob/master/Radzen.Blazor/DropDownBase
 8) Has ability to bind to either Int32 or string in form context.
 9) Display Name in select option list.
 10) Filter on ValStrs property.
+11) Add Pull Request for new InputSelectNumberFilter Blazor component.
